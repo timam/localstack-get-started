@@ -1,0 +1,18 @@
+---
+version: "3"
+
+services:
+  localstack:
+    container_name: localstack
+    image: localstack/localstack
+    environment:
+      - SERVICES=dynamodb,lambda,s3,apigateway,sts
+      - DEFAULT_REGION=us-east-1
+      - DATA_DIR=/tmp/localstack/data
+    volumes:
+      - "./tmp/localstack:/tmp/localstack"
+      - "./tmp/localstack/run/docker.sock:/var/run/docker.sock"
+    ports:
+      - "443:443"
+      - "4566:4566"
+      - "4571:4571"

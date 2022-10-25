@@ -1,0 +1,15 @@
+Start Localstack 
+```
+docker-compose up -d 
+```
+
+Set AWS keys
+```
+export AWS_ACCESS_KEY_ID=foobar
+export AWS_SECRET_ACCESS_KEY=foobar
+```
+
+List dynamodb tables
+```
+aws dynamodb list-tables --endpoint-url http://localhost:4566
+```
